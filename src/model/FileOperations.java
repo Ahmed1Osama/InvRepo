@@ -22,8 +22,8 @@ public class FileOperations {
                 writeFilesItemData(line);
 
             }
-           System.out.println("}" + "\n" + "------------------------------------");
-        System.out.println("welcom");
+           System.out.println("}" + "\n" +"-"+"\n"+"-"+"\n"+"-"+"\n"+"-");
+
         }
     }
 
