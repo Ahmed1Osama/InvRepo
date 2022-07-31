@@ -13,7 +13,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class LineTableModel extends AbstractTableModel {
 
-    private String[] cols = {"Item", "Unit Price", "Count", "Total"};
+    private String[] cols = {"Item Name", "Item Price", "Count", "Item Total"};
     private List<InvoiceLines> lines;
 
     public LineTableModel(List<InvoiceLines> lines) {
@@ -51,5 +51,4 @@ public class LineTableModel extends AbstractTableModel {
         }
         return "";
     }
-    
 }

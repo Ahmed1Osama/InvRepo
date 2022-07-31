@@ -13,8 +13,8 @@ import view.SalesInvoiceFrame;
  * @ Ahmed_Osama
  */
 public class HeaderTableModel extends AbstractTableModel {
-    private String[] cols = {"Num", "Customer", 
-        "Date", "Total"};
+    private String[] cols = {"No.", "Date" , "Customer"
+       , "Total"};
     private List<InvoiceHeader> invoices;
     
     public HeaderTableModel(List<InvoiceHeader> invoices) {
@@ -41,8 +41,8 @@ public class HeaderTableModel extends AbstractTableModel {
         InvoiceHeader inv = invoices.get(rowIndex);
         switch (columnIndex) {
             case 0: return inv.getInvoiceNum();
-            case 1: return inv.getCustomerName();
-            case 2: return SalesInvoiceFrame.sdf.format(inv.getInvoiceDate());
+            case 1: return SalesInvoiceFrame.sdf.format(inv.getInvoiceDate());
+            case 2: return inv.getCustomerName();
             case 3: return inv.getTotal();
         }
         return "";

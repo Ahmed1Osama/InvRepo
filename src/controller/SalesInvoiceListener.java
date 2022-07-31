@@ -68,13 +68,13 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
                 saveData();
                 break;
             case "newInvoiceOK":
-                newInvoiceOK();
+                newInvoiceAdd();
                 break;
             case "newInvoiceCancel":
                 newInvoiceCancel();
                 break;
             case "newLineOK":
-                newLineOK();
+                newLineWr();
                 break;
             case "newLineCancel":
                 newLineCancel();
@@ -168,7 +168,7 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
                 
                 frame.getInvoices().clear();
                 for (String headerLine : headerLines) {
-                    String[] parts = headerLine.split(",");  // "1,22-11-2020,Ali"  ==>  ["1", "22-11-2020", "Ali"]
+                    String[] parts = headerLine.split(","); 
                     String numString = parts[0];
                     String dateString = parts[1];
                     String name = parts[2];
@@ -245,7 +245,7 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
         }
     }
 
-    private void newInvoiceOK() {
+    private void newInvoiceAdd() {
         String customer = headerDialog.getCustNameField().getText();
         String date = headerDialog.getInvDateField().getText();
         headerDialog.setVisible(false);
@@ -276,7 +276,7 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
         headerDialog.dispose();
     }
 
-    private void newLineOK() {
+    private void newLineWr() {
         int selectedInv = frame.getInvoicesTable().getSelectedRow();
         if (selectedInv != -1) {
             InvoiceHeader inv = frame.getInvoices().get(selectedInv);
