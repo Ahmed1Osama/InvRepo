@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-import static controller.SalesInvoiceListener.frame;
+import static controller.SalesListener.frame;
 
 public class FileOperations {
 

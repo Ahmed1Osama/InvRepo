@@ -13,12 +13,18 @@ public class InvoiceLines {
     private double itemPrice;
     private int count;
     private InvoiceHeader invoice;
-
-    public InvoiceLines(String item, double price, int count, InvoiceHeader invoice) {
+  
+    public InvoiceLines (String item, double price, int count, InvoiceHeader invoice) {
         this.itemName = item;
         this.itemPrice = price;
         this.count = count;
         this.invoice = invoice;
+  
+    
+    }
+    public int getInvNo(){
+    int nO = invoice.getInvoiceNum();
+    return nO;
     }
 
     public String toCSV() {
@@ -44,12 +50,14 @@ public class InvoiceLines {
     public int getCount() {
         return count;
     }
+    
 
     public void setCount(int count) {
         this.count = count;
     }
 
     public InvoiceHeader getInvoice() {
+  
         return invoice;
     }
 

@@ -13,8 +13,9 @@ import javax.swing.table.AbstractTableModel;
  */
 public class LineTableModel extends AbstractTableModel {
 
-    private String[] cols = {"Item Name", "Item Price", "Count", "Item Total"};
+    private String[] cols = {"NO.","Item Name", "Item Price", "Count", "Item Total"};
     private List<InvoiceLines> lines;
+    private List<InvoiceHeader> hD ;
 
     public LineTableModel(List<InvoiceLines> lines) {
         this.lines = lines;
@@ -39,15 +40,17 @@ public class LineTableModel extends AbstractTableModel {
         return cols[column];
     }
     
+   
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         InvoiceLines line = lines.get(rowIndex);
-        
+              
         switch (columnIndex) {
-            case 0: return line.getItemName();
-            case 1: return line.getItemPrice();
-            case 2: return line.getCount();
-            case 3: return line.getTotal();
+            case 0: return line.getInvNo();
+            case 1: return line.getItemName();
+            case 2: return line.getItemPrice();
+            case 3: return line.getCount();
+            case 4: return line.getTotal(); 
         }
         return "";
     }

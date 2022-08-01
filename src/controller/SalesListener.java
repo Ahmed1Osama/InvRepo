@@ -32,13 +32,13 @@ import view.SalesInvoiceFrame;
  *
  * @ Ahmed_Osama
  */
-public class SalesInvoiceListener implements ActionListener, ListSelectionListener {
+public class SalesListener implements ActionListener, ListSelectionListener {
 
     public static SalesInvoiceFrame frame;
     private InvoiceHeaderDialog headerDialog;
     private InvoiceLineDialog lineDialog;
 
-    public SalesInvoiceListener(SalesInvoiceFrame frame) {
+    public SalesListener(SalesInvoiceFrame frame) {
         this.frame = frame;
     }
 
@@ -68,10 +68,10 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
                 saveData();
                 break;
             case "newInvoiceOK":
-                newInvoiceAdd();
+                addNewInvoice();
                 break;
             case "newInvoiceCancel":
-                newInvoiceCancel();
+                cancelNewInvoice();
                 break;
             case "newLineOK":
                 newLineWr();
@@ -245,7 +245,7 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
         }
     }
 
-    private void newInvoiceAdd() {
+    private void addNewInvoice() {
         String customer = headerDialog.getCustNameField().getText();
         String date = headerDialog.getInvDateField().getText();
         headerDialog.setVisible(false);
@@ -271,7 +271,7 @@ public class SalesInvoiceListener implements ActionListener, ListSelectionListen
         return num + 1;
     }
 
-    private void newInvoiceCancel() {
+    private void cancelNewInvoice() {
         headerDialog.setVisible(false);
         headerDialog.dispose();
     }

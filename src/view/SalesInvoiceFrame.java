@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTable;
-import controller.SalesInvoiceListener;
+import controller.SalesListener;
 import model.HeaderTableModel;
 import model.InvoiceHeader;
 
@@ -306,7 +306,7 @@ public class SalesInvoiceFrame extends javax.swing.JFrame {
     private javax.swing.JPanel right_sidePanal;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
-    private SalesInvoiceListener listener = new SalesInvoiceListener(this);
+    private SalesListener listener = new SalesListener(this);
     public static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     private ArrayList<InvoiceHeader> invoices;
     private HeaderTableModel headerTableModel;
@@ -354,7 +354,7 @@ public class SalesInvoiceFrame extends javax.swing.JFrame {
         return invTotalLabel;
     }
 
-    public SalesInvoiceListener getListener() {
+    public SalesListener getListener() {
         return listener;
     }
     
